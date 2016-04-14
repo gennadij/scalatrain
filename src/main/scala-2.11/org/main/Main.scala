@@ -1,7 +1,6 @@
 package org.main
 
 import org.scalatrain._
-import org.slf4j._
 
 object Main {
   
@@ -56,7 +55,13 @@ object Main {
     println("Trains: " + journeyPlanner.trains(st1) )
     
     println("Departures: " + journeyPlanner.departures(st3))
-    
+
+    val isActive = true
+    def log(message: String): Unit ={
+      if (isActive) println(message)
+    }
+    log("test log")
+
     println("END")
   }
 }

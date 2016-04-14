@@ -20,5 +20,5 @@ case class Time(hours: Int = 0, minutes: Int = 0) {
     this.asMinutes - that.asMinutes
   }
   
-  override def toString = "<Time -> " +  hours + ":" + minutes + ">"
+  override val toString: String = "%02d:%02d".format(hours, minutes)
 }

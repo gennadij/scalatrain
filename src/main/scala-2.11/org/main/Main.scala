@@ -1,11 +1,11 @@
 package org.main
 
 import org.scalatrain._
+import org.slf4j._
 
 object Main {
   
   def main(args: Array[String]) = {
-    
     val st1 = new Station("Weinagrten")
     val st2 = new Station("Ravensburg")
     val t1 = Time(12, 30)
@@ -14,8 +14,9 @@ object Main {
         (t1, st1), 
         (t2, st2)
     )
+
     
-    val train1 = new Train(TrainKind.Ice, "12", schedule1)
+    val train1 = new Train(new Ice("12"), schedule1)
     
     val t3 = Time(14, 30)
     val t4 = Time(14,45)
@@ -29,7 +30,7 @@ object Main {
         (t5, st5)
     )
     
-    val train2 = new Train(TrainKind.Re, "13", schedule2)
+    val train2 = new Train(new Re("13"), schedule2)
     
     val t6 = Time(9, 15)
     val t7 = Time(10,0)
@@ -43,7 +44,7 @@ object Main {
         (t8, st8)
     )
     
-    val train3 = new Train(TrainKind.Brb, "13", schedule3)
+    val train3 = new Train(new Brb("14"), schedule3)
     
     println(train1.stations)
     println(train1.times)
